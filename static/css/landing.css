@@ -141,6 +141,7 @@
 
 .dashboard-content {
     padding: 2.5rem;
+    text-align: center;
 }
 
 .dashboard-stats {
@@ -154,7 +155,7 @@
     background: #f8f9fa;
     border-radius: 12px;
     padding: 1rem;
-    text-align: left;
+    text-align: center;
 }
 
 .stat-label {
@@ -189,7 +190,7 @@
 
 .chart-row {
     display: grid;
-    grid-template-columns: 60px 1fr;
+    grid-template-columns: 60px 1fr 60px;
     align-items: center;
     gap: 1rem;
 }
@@ -198,6 +199,7 @@
     font-size: 0.85rem;
     color: #374151;
     font-weight: 500;
+    text-align: right;
 }
 
 .chart-bar-track {
@@ -211,6 +213,70 @@
     height: 100%;
     border-radius: 999px;
     transition: width 0.6s ease;
+}
+
+/* ------------------------------------------------------------------ */
+/* Video Modal                                                         */
+/* ------------------------------------------------------------------ */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-container {
+    position: relative;
+    background: #fff;
+    border-radius: 12px;
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: #ccc;
+}
+
+.modal-video {
+    width: 800px;
+    max-width: 90vw;
+    aspect-ratio: 16 / 9;
+}
+
+.modal-video iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
 }
 
 /* ------------------------------------------------------------------ */
